@@ -2,30 +2,20 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I created it as an example of how to have a "Loading" service and component that can be used by all other components to indicate when loading is taking place.
 
-## Code scaffolding
+The ActiveTask Service keeps track of what tasks are active, and emits changes to the list.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+Components and services are responsible for using the service to add and remove tasks from the active list.
 
-## Build
+The TaskIndicator Component subscribes to the ActiveTask service for changes to the list, and displays a list of tasks that are running.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+The main page uses routing to show the Home page, Page 1, or Page 2.
 
-## Running unit tests
+Each page simulates loading by creating an active task, and setting a timeout on it.  The pages will remove this loading task after the timeout, or if the component is destroyed.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The Home page has a button to add local active tasks in the component.  This simulates tasks within the component that need to show an indicator.  There is also a button to remove the oldest task.  All tasks will be removed when the component is destroyed.
 
-## Running end-to-end tests
+Page 1 and Page 2 both have a button to simulate running a service task.  The service tasks take care of adding the active task for the service.  Thus when you start one of these service tasks, you will see that the active task persists, even if you navigate off of the page that started the service.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Please let me know if you have any ideas on how to improve this code.  Thanks!    

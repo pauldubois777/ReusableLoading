@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { ActiveTaskService } from '../shared/active-task.service';
 import { ActiveTask } from '../shared/active-task';
+import { LongRunningService } from '../shared/long-running.service';
 
 @Component({
   selector: 'rul-page1',
@@ -11,7 +12,7 @@ import { ActiveTask } from '../shared/active-task';
 export class Page1Component implements OnInit, OnDestroy {
   private loadingTask: ActiveTask;
 
-  constructor(private activeTaskService: ActiveTaskService) { }
+  constructor(private activeTaskService: ActiveTaskService, private longRunningService: LongRunningService) { }
 
   ngOnInit() {
     this.loadingTask = this.activeTaskService.addActiveTask("Loading Page 1 Component");
@@ -22,5 +23,9 @@ export class Page1Component implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.activeTaskService.removeActiveTask(this.loadingTask);
+  }
+
+  onStartLongRunningServiceTask(){
+    this.longRunningService.startTask();
   }
 }

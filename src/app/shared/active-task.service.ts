@@ -17,6 +17,7 @@ export class ActiveTaskService {
   }
 
   removeActiveTask(activeTask: ActiveTask){
+    // TODO: Improve this to not use index when removing element, since the array MIGHT change between getting the idx and removing the element.
     let idx = this.activeTasks.indexOf(activeTask);
     if (idx > -1 ){
       this.activeTasks.splice(idx, 1);

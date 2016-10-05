@@ -10,6 +10,8 @@ import { Page2Component } from './page2/page2.component';
 import { ActiveTaskService } from './shared/active-task.service';
 import { HomeComponent } from './home/home.component';
 import { RouterLoadingRoutingModule } from './app-routing.module';
+import { LongRunningService } from './shared/long-running.service';
+import { EvenLongerRunningService } from './shared/even-longer-running.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,11 @@ import { RouterLoadingRoutingModule } from './app-routing.module';
     HttpModule,
     RouterLoadingRoutingModule
   ],
-  providers: [ActiveTaskService],
+  providers: [
+    ActiveTaskService,
+    LongRunningService,
+    EvenLongerRunningService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
