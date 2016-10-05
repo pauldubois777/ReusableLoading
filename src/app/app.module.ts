@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { TaskIndicatorComponent } from './task-indicator/task-indicator.component';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
-import { LoadingService } from './shared/loading.service';
+import { ActiveTaskService } from './shared/active-task.service';
 import { HomeComponent } from './home/home.component';
 import { RouterLoadingRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpinnerComponent,
+    TaskIndicatorComponent,
     Page1Component,
     Page2Component,
     HomeComponent
@@ -25,7 +25,7 @@ import { RouterLoadingRoutingModule } from './app-routing.module';
     HttpModule,
     RouterLoadingRoutingModule
   ],
-  providers: [LoadingService],
+  providers: [ActiveTaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
