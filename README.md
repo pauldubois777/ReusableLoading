@@ -4,6 +4,8 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 I created it as an example of how to have a "Loading" service and component that can be used by all other components and services to indicate when loading is taking place.
 
+Demo can be viewed [Here](http://loading.coderforchrist.com/)
+
 The ActiveTask Service keeps track of what tasks are active, and emits changes to the list.
 
 Components and services are responsible for using the service to add and remove tasks from the active list.
