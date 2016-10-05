@@ -1,15 +1,17 @@
 <div style="text-align: center">
   <h3>Task Indicator</h3>
   <br/>
-  <div *ngIf="activeTasks.length > 0">
-    <div style="text-align: left">
-      <ul class="list-group">
-        <li *ngFor="let task of activeTasks" class="list-group-item" style="font-size: small">
-          {{task.description}}<img src="/assets/images/spinner.gif" align="right" alt="Loading..."><br/>
-          {{task.startDate | date:'medium'}}   
-        </li>
-      </ul>
-    </div>
+  <div style="text-align: left">
+    <ul class="list-group">
+      <li 
+        *ngFor="let task of activeTasks"
+        class="list-group-item" 
+        style="font-size: small"
+        [@flyInOut]="'in'">
+        {{task.description}}<img src="/assets/images/spinner.gif" align="right" alt="Loading..."><br/>
+        {{task.startDate | date:'medium'}}   
+      </li>
+    </ul>
   </div>
   <div *ngIf="activeTasks.length === 0">
     <p>No Active Tasks</p>
