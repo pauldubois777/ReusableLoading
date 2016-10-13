@@ -9,7 +9,7 @@ export class HelperService {
   flattenIntegerArray(inArray: any): Array<number> {
     let retArray: Array<number> = new Array<number>();
     if (!Array.isArray(inArray)){
-        throw new Error("inValue must be an array or number");
+        throw new Error("inValue must be an array");
     }
     for(let i = 0; i < inArray.length; i++) {
       if(Array.isArray(inArray[i])) {
