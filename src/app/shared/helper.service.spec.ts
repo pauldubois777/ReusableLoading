@@ -119,15 +119,15 @@ describe('Service: Helper', () => {
     }));
 
     it('Passing initial null throws exception', inject([HelperService], (service: HelperService) => {
-      expect( function(){ service.flattenIntegerArray(null); } ).toThrow(new Error("inValue must be an array or number"));
+      expect( function(){ service.flattenIntegerArray(null); } ).toThrow(new Error("inValue must be an array"));
     }));
     
     it('Passing initial string throws exception', inject([HelperService], (service: HelperService) => {
-      expect( function(){ service.flattenIntegerArray("hello"); } ).toThrow(new Error("inValue must be an array or number"));
+      expect( function(){ service.flattenIntegerArray("hello"); } ).toThrow(new Error("inValue must be an array"));
     }));
     
     it('Passing initial integer throws exception', inject([HelperService], (service: HelperService) => {
-      expect( function(){ service.flattenIntegerArray(1); } ).toThrow(new Error("inValue must be an array or number"));
+      expect( function(){ service.flattenIntegerArray(1); } ).toThrow(new Error("inValue must be an array"));
     }));
     
     it('Passing initial array of strings throws exception', inject([HelperService], (service: HelperService) => {
