@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterLoadingRoutingModule } from './app-routing.module';
 import { LongRunningService } from './shared/long-running.service';
 import { EvenLongerRunningService } from './shared/even-longer-running.service';
+import { HelperService } from './shared/Helper.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EvenLongerRunningService } from './shared/even-longer-running.service';
   providers: [
     ActiveTaskService,
     LongRunningService,
-    EvenLongerRunningService
+    EvenLongerRunningService,
+    HelperService
   ],
   bootstrap: [AppComponent]
 })
